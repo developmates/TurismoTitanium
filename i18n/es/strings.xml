@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="tabName1">Guia</string>	
+	<string name="tabName2">Mapa</string>
+	<string name="tabName3">Noticias</string>
+	<string name="tabName4">Acerca De</string>
+	<string name="openWindow">新しいウインドを開く</string>
+	<string name="newWindow">新しいウインド</string>
+</resources>

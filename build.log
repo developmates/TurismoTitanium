@@ -1,0 +1,11 @@
+Logfile initialized
+[INFO] logfile = /Users/jlrm/Documents/Titanium Studio Workspace/GuiaTuristica/build.log
+[DEBUG] /Users/jlrm/Library/Application Support/Titanium/mobilesdk/osx/2.0.2.GA/android/builder.py simulator GuiaTuristica /Applications/android-sdk-macosx /Users/jlrm/Documents/Titanium Studio Workspace/GuiaTuristica com.developmates.guiaturistica 5 HVGA 
+[INFO] Building GuiaTuristica for Android ... one moment
+[INFO] Titanium SDK version: 2.0.2 (05/30/12 10:21 2ff31a3)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators

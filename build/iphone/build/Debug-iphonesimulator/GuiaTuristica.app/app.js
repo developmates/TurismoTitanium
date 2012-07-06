@@ -1,0 +1,1 @@
+/Users/jlrm/Documents/Titanium Studio Workspace/GuiaTuristica/Resources/app.js

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="tabName1">Guide</string>	
+	<string name="tabName2">Map</string>
+	<string name="tabName3">News</string>
+	<string name="tabName4">About</string>
+	<string name="openWindow">Open New Window</string>
+	<string name="newWindow">New Window</string>
+</resources>
