@@ -1,11 +1,32 @@
 Logfile initialized
-[INFO] logfile = /Users/jlrm/Documents/Titanium Studio Workspace/GuiaTuristica/build.log
-[DEBUG] /Users/jlrm/Library/Application Support/Titanium/mobilesdk/osx/2.0.2.GA/android/builder.py simulator GuiaTuristica /Applications/android-sdk-macosx /Users/jlrm/Documents/Titanium Studio Workspace/GuiaTuristica com.developmates.guiaturistica 5 HVGA 
+[INFO] logfile = /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build.log
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/2.0.2.GA/android/builder.py simulator GuiaTuristica /Applications/android-sdk-macosx /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium com.developmates.guiaturistica 4 HVGA 
 [INFO] Building GuiaTuristica for Android ... one moment
 [INFO] Titanium SDK version: 2.0.2 (05/30/12 10:21 2ff31a3)
 [DEBUG] Waiting for device to be ready ...
-[TRACE] adb devices returned 0 devices/emulators
-[TRACE] adb devices returned 0 devices/emulators
-[TRACE] adb devices returned 0 devices/emulators
-[TRACE] adb devices returned 0 devices/emulators
-[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.016715 seconds on emulator to get ready
+[DEBUG] com.developmates.guiaturistica installed? True
+[INFO] Fastdev server running, deploying in Fastdev mode
+[INFO] Copying CommonJS modules...
+[INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/tweets.js => /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/android/bin/assets/Resources/tweets.js
+[INFO] Tiapp.xml unchanged, skipping class generation
+[DEBUG] Processing Android resource drawables
+[DEBUG] found drawable-long-land-hdpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-long-land-hdpi/default.png
+[DEBUG] found drawable-long-land-ldpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-long-land-ldpi/default.png
+[DEBUG] found drawable-long-port-hdpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-long-port-hdpi/default.png
+[DEBUG] found drawable-long-port-ldpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-long-port-ldpi/default.png
+[DEBUG] found drawable-notlong-land-hdpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-notlong-land-hdpi/default.png
+[DEBUG] found drawable-notlong-land-ldpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-notlong-land-ldpi/default.png
+[DEBUG] found drawable-notlong-land-mdpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-notlong-land-mdpi/default.png
+[DEBUG] found drawable-notlong-port-hdpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-notlong-port-hdpi/default.png
+[DEBUG] found drawable-notlong-port-ldpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-notlong-port-ldpi/default.png
+[DEBUG] found drawable-notlong-port-mdpi splash screen at /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/android/images/res-notlong-port-mdpi/default.png
+[INFO] Waiting for SDCard to become available..
+[INFO] Re-launching application ... GuiaTuristica
+[INFO] Launching application ... GuiaTuristica
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.developmates.guiaturistica/.GuiaturisticaActivity }
+Warning: Activity not started, its current task has been brought to the front
+

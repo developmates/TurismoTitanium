@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/Base64Transcoder.c \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/Base64Transcoder.h
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/Base64Transcoder.c \
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/Base64Transcoder.h

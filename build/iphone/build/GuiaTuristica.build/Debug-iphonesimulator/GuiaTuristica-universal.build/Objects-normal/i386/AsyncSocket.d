@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/AsyncSocket.m \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/AsyncSocket.h
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/AsyncSocket.m \
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/AsyncSocket.h

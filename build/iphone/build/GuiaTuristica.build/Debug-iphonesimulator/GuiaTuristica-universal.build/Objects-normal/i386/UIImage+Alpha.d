@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/UIImage+Alpha.m \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/UIImage+Alpha.h
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/UIImage+Alpha.m \
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/UIImage+Alpha.h

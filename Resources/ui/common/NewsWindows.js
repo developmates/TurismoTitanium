@@ -4,8 +4,15 @@ function ApplicationWindow(title) {
 	var self = Ti.UI.createWindow({
 		title:title,
 		backgroundColor:'black',
-		barImage:titleBg
+		barImage:titleBg,
+		url: "tweets.js"
 	});
+	
+	//traerDatosNoticias();
+	
 	return self;
 };
+
+
+
 module.exports = ApplicationWindow;

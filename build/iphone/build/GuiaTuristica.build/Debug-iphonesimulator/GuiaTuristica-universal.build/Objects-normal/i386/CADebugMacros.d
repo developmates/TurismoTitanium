@@ -1,2 +1,3 @@
 dependencies: \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/CADebugMacros.cpp
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/CADebugMacros.cpp \
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/CADebugMacros.h

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/TiThreading.m \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/Classes/TiThreading.h
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/TiThreading.m \
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/Classes/TiThreading.h

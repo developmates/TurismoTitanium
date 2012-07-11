@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/jlrm/Documents/Titanium\ Studio\ Workspace/GuiaTuristica/build/iphone/main.m
+  /Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/build/iphone/main.m
