@@ -1,1 +1,0 @@
-/Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/ui/common/MapWindows.js

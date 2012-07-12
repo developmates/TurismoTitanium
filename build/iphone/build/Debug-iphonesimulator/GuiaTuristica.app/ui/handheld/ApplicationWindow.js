@@ -1,1 +1,0 @@
-/Users/lucasleandrosoria/programacion/titanium/TurismoTitanium/Resources/ui/handheld/ApplicationWindow.js
