@@ -10,7 +10,7 @@ var db;
 
     if (Ti.Platform.name === 'android' && Ti.Filesystem.isExternalStoragePresent()) {
 	 
-	 //db = Ti.Database.install('PuntaCana.sqlite','PuntaCana.sqlite');
+	 db = Titanium.Database.install('/PuntaCana.sqlite','PuntaCana.sqlite');
 	 //db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
 	 //db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
 	 db = Ti.Database.open('PuntaCana.sqlite');
