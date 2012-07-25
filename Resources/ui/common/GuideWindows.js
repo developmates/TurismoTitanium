@@ -13,7 +13,7 @@ var db;
 	 db = Titanium.Database.install('/PuntaCana.sqlite','PuntaCana.sqlite');
 	 //db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
 	 //db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
-	 db = Ti.Database.open('PuntaCana2.sqlite');
+	 db = Ti.Database.open('PuntaCana.sqlite');
     }else{
     	var dbOLD = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
 		//Destroy it
