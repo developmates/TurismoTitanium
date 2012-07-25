@@ -13,7 +13,7 @@ var db;
 	 db = Titanium.Database.install('/PuntaCana.sqlite','PuntaCana.sqlite');
 	 //db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
 	 //db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
-	 db = Ti.Database.open('PuntaCana.sqlite');
+	 db = Ti.Database.open('PuntaCana2.sqlite');
     }else{
     	var dbOLD = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
 		//Destroy it
@@ -31,10 +31,9 @@ var db;
 db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
 db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
 */
-function ApplicationWindow(title) {
+function ApplicationWindow(title,id) {
 	
 	var titleBg = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/top-bar-bg.png');
-	
 	var self = Ti.UI.createWindow({
 		title:title,
 		backgroundColor:'black',
@@ -43,7 +42,7 @@ function ApplicationWindow(title) {
 
 	
 	var table = Ti.UI.createTableView({
-		data:generarTabla('Categorias')
+		data:generarTabla(id)
 	});
 	
 	table.addEventListener('click', function(e){
@@ -55,7 +54,14 @@ function ApplicationWindow(title) {
 			 *source 	– the object that received the original event
 			 *section 	– the table section that received the event
 		 */
-		alert('You clicked row '+e.index+' with id:'+e.row.id);
+		//alert('You clicked row '+e.index+' with id:'+e.row.id);
+		if(e.row.hijo !== 0){
+		var GuideWindows = require('ui/common/GuideWindows');
+		var win = new GuideWindows(L('tabName1'),e.row.id)
+		self.containingTab.open(win);
+		}else{
+			alert('You clicked row '+e.index+' with id:'+e.row.id);
+		}
 	});
 
 	self.add(table);
@@ -67,9 +73,9 @@ function ApplicationWindow(title) {
 module.exports = ApplicationWindow;
 
 	
-function generarTabla(tableName){
+function generarTabla(id){
 	
-	dataBD = db.execute('SELECT * FROM '+tableName);
+	dataBD = db.execute('SELECT * FROM Categorias WHERE padre='+id);
 	
 	var tbl_data = crearFilasTabla(dataBD);
 	

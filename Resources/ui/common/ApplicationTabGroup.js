@@ -8,7 +8,7 @@ function ApplicationTabGroup() {
 	var AboutWindows = require('ui/common/AboutWindows');
 	
 	//create app tabs
-	var win1 = new GuideWindows(L('tabName1')),
+	var win1 = new GuideWindows(L('tabName1'),0),
 		win2 = new MapWindows(L('tabName2')),
 		win3 = new NewsWindows(L('tabName3')),
 		win4 = new AboutWindows(L('tabName4'));
