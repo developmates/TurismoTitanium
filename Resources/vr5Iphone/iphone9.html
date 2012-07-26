@@ -1,0 +1,104 @@
+<!--
+VR5 pano viewer 1.0.0
+Copyright (c) 2009-2010 Ninoslav Adzibaba http://www.vrhabitat.com/
+!!! DO NOT CHANGE THIS FILE !!!
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--<meta name="author" content="iVR Player by Ninoslav Adzibaba | www.vrhabitat.com" />
+<meta name="viewport" content="width=480,height=480">
+<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+
+<meta name="viewport" content="width=device-width, height=device-height" />
+<link rel="stylesheet" href="iphone.css" type="text/css">
+<link rel="apple-touch-icon" href="icon-iphone.png">
+<link rel="apple-touch-startup-image" href="startup.png" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script src="config9.js" type="text/javascript"></script>
+<title></title>
+</head>
+<body style="background-color:black;" onorientationchange="updateOrientation();">
+<a style="display:none; visibility:hidden;" href="http://www.vrhabitat.com/" title="HTML5 / JavaScript panorama viewer">HTML5 / JavaScript panorama viewer</a>
+<script type="text/javascript"> if (!((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)))) { document.write('<div class="warning">This content requires Mobile Safari on iPhone/iPod Touch </div>'); } </script>
+<div id="page_wrapper">
+	<div id="loading">
+	</div>
+	<script language="JavaScript"> var firstLoader = 0;if (window.innerWidth < 600 && firstLoader == 0) {document.getElementById("page_wrapper").setAttribute("class", "show_vert");} else {document.getElementById("page_wrapper").setAttribute("class", "show_hor"); firstLoader == 1;} </script>
+	<div id="controls_holder" class="hide">
+		<div id="sound_holder">
+			<img id="sound_btn" src="button.png" class="start">
+		</div>
+		<div id="auto_holder">
+			<img id="auto_btn" src="button.png" class="start">
+		</div>
+	</div>
+	<div id="info" class="hide">
+		<div id="bgholder">
+			<div id="title">
+			</div>
+            <div id="instruction">
+                Deslice hacia <strong>ARRIBA</strong>
+            </div>
+			<div id="subtitle">
+			</div>
+			<div id="description">
+			</div>
+		</div>
+	</div>
+	<div id="cubeholder">
+		<div id="cubes" class="preloading">
+			<img id="side_0" class="cube" src="yerba-buena-noche1.png"><img id="side_1" class="cube" src="yerba-buena-noche2.png"><img id="side_2" class="cube" src="yerba-buena-noche3.png"><img id="side_3" class="cube" src="yerba-buena-noche4.png"><img id="side_4" class="cube" src="yerba-buena-noche5.png"><img id="side_5" class="cube" src="yerba-buena-noche6.png">
+		</div>
+	</div>
+	<div id="toucharea">
+		&nbsp;
+	</div>
+</div>
+<div id="aaa">
+</div>
+<div id="bbb">
+</div>
+<div id="ccc">
+</div>
+<div id="ddd">
+</div>
+<div id="image1" class="imageholder" style="display:none;">
+	<img src="icon-iphone.png">
+</div>
+<div id="image2" class="imageholder" style="display:none;">
+	<img src="bg_tile.png">
+</div>
+<div id="image3" class="imageholder" style="display:none;">
+	<img src="bg_left.png">
+</div>
+<div id="image4" class="imageholder" style="display:none;">
+	<img src="btns.png">
+</div>
+<div id="image5" class="imageholder" style="display:none;">
+	<img src="logo-iphone.png">
+</div>
+<div id="image6" class="imageholder" style="display:none;">
+	<img src="offline.png">
+</div>
+<div id="image8" class="imageholder" style="display:none;">
+	<img src="startup.png">
+</div>
+<div id="image9" class="imageholder" style="display:none;">
+	<img src="favicon.ico">
+</div>
+<script src="iphone.js" type="text/javascript"></script>
+</body>
+</html>
