@@ -55,13 +55,12 @@ function ApplicationWindow(title,id) {
 			 *section 	– the table section that received the event
 		 */
 		//alert('You clicked row '+e.index+' with id:'+e.row.id);
-		if(e.row.hijo !== 0){
+		
 		var GuideWindows = require('ui/common/GuideWindows');
 		var win = new GuideWindows(L('tabName1'),e.row.id)
+		win.containingTab = self.containingTab;
 		self.containingTab.open(win);
-		}else{
-			alert('You clicked row '+e.index+' with id:'+e.row.id);
-		}
+		
 	});
 
 	self.add(table);
