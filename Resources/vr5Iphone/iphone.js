@@ -173,14 +173,14 @@ function getOrientation() {
 }
 function showVR() {
     var ctrlarea = document.getElementById("toucharea");
-   /* if (!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i))) {
+    if (!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i))) {
         ctrlarea.parentNode.removeChild(ctrlarea);
         var infoarea = document.getElementById("info");
         infoarea.parentNode.removeChild(infoarea);
         var controlsarea = document.getElementById("controls_holder");
         controlsarea.parentNode.removeChild(controlsarea);
         return;
-    }*/
+    }
     ctrlarea.addEventListener("touchstart", startTouch, false);
     ctrlarea.addEventListener("touchmove", moveTouch, false);
     ctrlarea.addEventListener("touchend", endTouch, false);
@@ -233,7 +233,6 @@ function setContent(vrTitle, vrSubTitle, vrDescription) {
             infoElement.style.top = verticalArea + "px";
         }
     }
-    
 }
 function getWindowHeight() {
     var windowHeight = 0;
@@ -433,8 +432,8 @@ function endTouch(e) {
             limit3y = limit2y - 58;
             firstSlide = false;
             setTimeout("updateIcon()", 300);
-//JLRM            var instructionElement = document.getElementById("instruction");
-//JLRM            instructionElement.innerHTML = "Deslice hacia <strong>ARRIBA</strong>";
+            var instructionElement = document.getElementById("instruction");
+            instructionElement.innerHTML = "Deslice hacia <strong>ARRIBA</strong>";
         } else if (razX < 50 && razY > 0 && !visDescription) {
             infoElement.style.top = verticalArea + "px";
             limit2y = verticalArea + 20;
@@ -784,11 +783,9 @@ window.applicationCache.addEventListener("updateready", function () {
     window.applicationCache.swapCache();
     console.log("swap cache has been called");
 }, false);
-/* JLRM LE DOY VIAJE
 doLog = setInterval(function () {
     cache.update();
 }, 10000);
-*/
 if (!navigator.onLine) {
     stopLog();
 }

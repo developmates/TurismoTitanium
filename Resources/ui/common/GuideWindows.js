@@ -8,13 +8,20 @@ dbOLD.remove();
 //Install new database
 var db;
 
-    if (Ti.Platform.name === 'android' && Ti.Filesystem.isExternalStoragePresent()) {
+    //if (Ti.Platform.name === 'android' && Ti.Filesystem.isExternalStoragePresent()) {
+	 var dbOLD = Ti.Database.install('/PuntaCana.sqlite', 'PuntaCana');
+		//Destroy it
+		if(dbOLD){
+			Ti.API.info('remove');
+			dbOLD.close();
+			dbOLD.remove();
+		}
 	 
 	 db = Titanium.Database.install('/PuntaCana.sqlite','PuntaCana.sqlite');
 	 //db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
 	 //db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
 	 db = Ti.Database.open('PuntaCana.sqlite');
-    }else{
+   /* }else{
     	var dbOLD = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
 		//Destroy it
 		if(dbOLD){
@@ -24,7 +31,7 @@ var db;
 		}
       db = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
     }
-
+	*/
 
 
 /*
@@ -55,11 +62,14 @@ function ApplicationWindow(title,id) {
 			 *section 	– the table section that received the event
 		 */
 		//alert('You clicked row '+e.index+' with id:'+e.row.id);
-		
+		if(e.row.hijo ===0){
 		var GuideWindows = require('ui/common/GuideWindows');
 		var win = new GuideWindows(L('tabName1'),e.row.id)
 		win.containingTab = self.containingTab;
 		self.containingTab.open(win);
+		}else{
+			alert('Ficha');
+		}
 		
 	});
 
@@ -147,6 +157,10 @@ function crearFilasTabla(dataBD){
   					shadowOffset: {x:0.4, y:0.4},
 	  			});
 	  			fila.add(nombre);
+				break;
+				case 'hijo':
+				row.hijo = dataBD.fieldByName(name);
+				fila.hijo = row.hijo;
 				break;
 			default:
 				break;
