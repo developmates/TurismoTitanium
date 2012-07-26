@@ -1,0 +1,335 @@
+/*
+
+VR5 pano viewer 1.0.0
+Copyright (c) 2009-2010 Ninoslav Adzibaba http://www.vrhabitat.com/
+
+
+!!! DO NOT CHANGE THIS FILE !!!
+
+
+
+THE SOFTWARE IS PROVIDED "AS IS",  WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED,  INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY,  FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM,  DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT,  TORT OR OTHERWISE,  ARISING
+FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+
+body {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+
+div, span {
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+.imageholder {
+	display:block;
+	float:left;
+	position:absolute;
+	margin-left:0px;
+}
+
+#loading, .show_hor #loading {
+	position:absolute;
+	z-index:149;
+	width:320px;
+	top:60px;
+	left:80px;
+	text-align:center;
+}
+
+.show_vert #loading {
+	top:120px;
+	left:0px;
+}
+
+.warning {
+	padding:1em;
+	margin:20px 4%;
+	border:solid 4px red;
+	background:#f88;
+	color:black;
+	text-align:center;
+	font:700 18px Arial,  Helvetica,  sans-serif;
+	position:fixed;
+	width:90%;
+	z-index:200;
+}
+
+#controls_holder, .show_hor #controls_holder {
+	position:relative;
+	float:left;
+	top:5px;
+	left:360px;
+	z-index:201;
+	width:110px;
+	height:74px;
+}
+
+.show_vert #controls_holder {
+	left:205px;
+}
+
+#auto_holder, #sound_holder {
+	display:inline;
+	float:right;
+	width:55px;
+	height:74px;
+}
+
+#controls_holder div img {
+	background:url(btns.png) no-repeat;
+}
+
+#sound_btn.start {
+	background-position:0px 0px;
+}
+
+#sound_btn.on {
+	background-position:-55px 0px;
+}
+
+#sound_btn.off {
+	background-position:-110px 0px;
+}
+
+#auto_btn.start {
+	background-position:-165px 0px;
+}
+
+#auto_btn.on {
+	background-position:-220px 0px;
+}
+
+#auto_btn.off {
+	background-position:-275px 0px;
+}
+
+#info {
+	display:block;
+	position:absolute;
+	z-index:119;
+	width:320px;
+	float:left;
+	left:0px;
+	padding:0px;
+	background:url(bg_tile.png) repeat-x;
+	height:auto;
+	opacity:0.8;
+	top:480px;
+	-webkit-transition:top 0.3s ease-in;
+}
+
+.hide, .show_hor #info, audio {
+	visibility:hidden;
+}
+
+#bbb, #bbb img {
+	position:absolute;
+	float:left;
+	z-index:999;
+	display:block;
+}
+
+#aaa, #aaa div, #aaa img {
+	position:absolute;
+	float:left;
+	z-index:1000;
+}
+
+#ddd {
+	position:absolute;
+	float:left;
+	z-index:998;
+	display:block;
+	-webkit-transition:opacity 0.5s ease-in;
+	background-color:#000;
+	-webkit-border-radius:8px;
+	color:#FFF;
+	letter-spacing:-1px;
+	line-height:20px;
+	text-align:center;
+	padding:16px;
+	opacity:0;
+	width:120px;
+	font:700 16px Arial;
+	height:auto;
+}
+
+#bgholder {
+	margin:0px;
+	padding:5px;
+	background:url(bg_left.png) no-repeat;
+    position: relative;
+}
+
+#title {
+	font-family:Helvetica, Arial, sans-serif;
+	letter-spacing:-1px;
+	font-size:18px;
+	line-height:30px;
+	margin-bottom:0px;
+	margin-top:26px;
+    position: relative;
+    width: 200px;
+}
+
+#instruction {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:10px;
+	margin-bottom:0px;
+	margin-top:28px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+#subtitle {
+	margin-top:-2px;
+	font-family:Arial,  Helvetica,  sans-serif;
+	font-size:11px;
+	border-bottom:1px solid #CCC;
+	color:#999;
+	margin-bottom:5px;
+}
+
+#description {
+	padding:6px 10px;
+	font-family:Arial,  Helvetica,  sans-serif;
+	font-size:11px;
+	background-color:#FFF;
+	-webkit-border-radius:6px;
+	margin-top:0px;
+	margin-bottom:0px;
+	height:auto;
+}
+
+#ccc {
+	position:absolute;
+	float:left;
+	margin-top:10000px;
+	visibility:0.1;
+	width:auto;
+}
+
+#toucharea, .show_hor #toucharea {
+	position:absolute;
+	z-index:150;
+	width:480px;
+	height:302px;
+	top:0;
+	left:0;
+}
+
+#cubeholder, .show_hor #cubeholder {
+	width:480px;
+	height:302px;
+	overflow:hidden;
+	-webkit-perspective:220;
+	-webkit-transform-style:preserve-3d;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:118;
+    background-color: #000000;
+}
+
+#cubes, .show_hor #cubes {
+	width:480px;
+	height:302px;
+	-webkit-transform-style:preserve-3d;
+	-webkit-transform:translateZ(220px);
+}
+
+.show_vert #cubes, .show_vert #cubeholder, .show_vert #toucharea {
+	width:320px;
+	height:462px;
+    
+}
+
+.preloading, .preloading img {
+	display:none;
+}
+
+.visible, #cubeholder img {
+	display:block;
+}
+
+.cube, .show_hor .cube {
+	position:absolute;
+	left:0px;
+	top:-89px;
+	-webkit-backface-visibility:hidden;
+}
+
+.show_vert .cube {
+	left:-80px;
+	top:-9px;
+	
+}
+
+#side_0 {
+	-webkit-transform:translateZ(-141px);
+}
+
+#side_1 {
+/*
+	-webkit-transform:rotateY(-90deg) translateZ(-239px);
+	*/
+	 -webkit-transform: rotateY(-90deg) translateZ(-141px);
+}
+
+#side_2 {
+	/*-webkit-transform:rotateY(180deg) translateZ(-239px);*/
+	 -webkit-transform: rotateY(180deg) translateZ(-141px);
+}
+
+#side_3 {
+	/*-webkit-transform:rotateY(90deg) translateZ(-239px);*/
+	-webkit-transform: rotateY(90deg) translateZ(-141px);
+}
+
+#side_4 {
+	/*-webkit-transform:rotateX(-90deg) translateZ(-239px);*/
+	-webkit-transform: rotateX(-90deg) translateZ(-141px);
+}
+
+#side_5 {
+	/*-webkit-transform:rotateX(90deg) translateZ(-239px);*/
+	-webkit-transform: rotateX(90deg) translateZ(-141px);
+}
+
+.appMode .show_hor #cubes, .appMode .show_hor #cubeholder, .appMode .show_hor #toucharea {
+	width:480px;
+	height:272px;
+}
+
+.appMode .show_vert #cubes, .appMode .show_vert #cubeholder, .appMode .show_vert #toucharea {
+	/*width:320px;
+	height:420px;*/
+	width:320px;
+	height:320px;
+}
+
+.appMode .show_hor .cube {
+	left:0px;
+	top:-104px;
+}
+
+.appMode .show_vert .cube {
+	/*left:-80px;
+	top:-30px;*/
+	
+	left:18px;
+	top:18px;
+}

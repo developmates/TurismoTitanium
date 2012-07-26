@@ -166,6 +166,6 @@ function crearFilasTabla(dataBD){
 	  tbl_data.push(fila);
 	  dataBD.next();
 	}
-	//dataBD.close();
+	dataBD.close();
 	return tbl_data;
 }
