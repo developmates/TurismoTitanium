@@ -173,6 +173,7 @@ function getOrientation() {
 }
 function showVR() {
     var ctrlarea = document.getElementById("toucharea");
+/*JLRM
     if (!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i))) {
         ctrlarea.parentNode.removeChild(ctrlarea);
         var infoarea = document.getElementById("info");
@@ -180,7 +181,7 @@ function showVR() {
         var controlsarea = document.getElementById("controls_holder");
         controlsarea.parentNode.removeChild(controlsarea);
         return;
-    }
+    }*/
     ctrlarea.addEventListener("touchstart", startTouch, false);
     ctrlarea.addEventListener("touchmove", moveTouch, false);
     ctrlarea.addEventListener("touchend", endTouch, false);
@@ -783,9 +784,10 @@ window.applicationCache.addEventListener("updateready", function () {
     window.applicationCache.swapCache();
     console.log("swap cache has been called");
 }, false);
+/*JLRM
 doLog = setInterval(function () {
     cache.update();
-}, 10000);
+}, 10000);*/
 if (!navigator.onLine) {
     stopLog();
 }
