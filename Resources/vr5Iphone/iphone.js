@@ -442,17 +442,17 @@ function endTouch(e) {
             limit3y = limit2y - 58;
             firstSlide = false;
             updateIcon();
-            var instructionElement = document.getElementById("instruction");
-            instructionElement.innerHTML = "Deslice hacia <strong>ABAJO</strong>";
+//JLRM            var instructionElement = document.getElementById("instruction");
+//JLRM            instructionElement.innerHTML = "Deslice hacia <strong>ABAJO</strong>";
         } else if (visDescription && firstSlide) {
             prikaziPoruku("Deslice hacia ABAJO para ocultar el texto");
-            var instructionElement = document.getElementById("instruction");
-            instructionElement.innerHTML = "";
+//JLRM            var instructionElement = document.getElementById("instruction");
+//JLRM            instructionElement.innerHTML = "";
             firstSlide = true;
         } else if (!visDescription && firstSlide) {
             prikaziPoruku("Deslice hacia ARRIBA para mostrar el texto");
-            var instructionElement = document.getElementById("instruction");
-            instructionElement.innerHTML = "";
+//JLRM            var instructionElement = document.getElementById("instruction");
+//JLRM            instructionElement.innerHTML = "";
             firstSlide = true;
         }
     }
