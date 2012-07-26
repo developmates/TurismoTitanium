@@ -7,15 +7,20 @@ function ApplicationWindow(title) {
 		barImage: titleBg
 	});
 	
-	var topImageBg = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'/images/swipe-controls.png')
+	var topImageBg = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/swipe-controls.png')
 	var topViewImage = Ti.UI.createImageView({
 		//backgroundImage: topImageBg,
 		image:topImageBg,
-		height:50,
-		width:320,
-		top:0,
-		left:0
+		height:'auto',
+		width:'auto',
 	});
+	var topView = Ti.UI.createView({
+		top:0,
+		left:0,
+		height:50,
+		width:'auto'
+	});
+	topView.add(topViewImage);
 	
 	var webView2 = Titanium.UI.createWebView({
 		url:'/vr5Iphone/iphone1.html',
@@ -24,7 +29,7 @@ function ApplicationWindow(title) {
 	});
 	
 	
-	self.add(topViewImage);
+	self.add(topView);
 	self.add(webView2);
 	
 	return self;
