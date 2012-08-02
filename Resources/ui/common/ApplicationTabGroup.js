@@ -1,7 +1,24 @@
 function ApplicationTabGroup() {
 	//create module instance
-	var self = Ti.UI.createTabGroup();
-	
+	var self = Ti.UI.createTabGroup({
+		backgroundColor: '#96c120',
+		/*NO CAMBIAN NADA QUE NOTE
+		backgroundDisabledColor:'red',
+		backgroundFocusedColor:'red',
+		backgroundSelectedColor:'red' 
+		
+		activeTabBackgroundColor:'red',
+		activeTabBackgroundDisabledColor:'red',
+		activeTabBackgroundFocusedColor: 'red',
+		activeTabBackgroundSelectedColor: 'red' 
+		
+		tabsBackgroundColor:'red',
+		tabsBackgroundDisabledColor:'red',
+		tabsBackgroundFocusedColor:'red',
+		tabsBackgroundSelectedColor:'red' 
+		*/
+	});			
+
 	var GuideWindows = require('ui/common/GuideWindows');
 	var NewsWindows = require('ui/common/NewsWindows');
 	var MapWindows = require('ui/common/MapWindows');
@@ -17,6 +34,14 @@ function ApplicationTabGroup() {
 		title: L('tabName1'),
 		icon: '/images/tab-guia.png',
 		window: win1
+		/* NO HACEN NADA
+		backgroundColor:'red',
+		backgroundDisabledColor:'red',
+		backgroundFocusedColor:'red',
+		backgroundSelectedColor:'red'
+		*/
+		
+		
 	});
 	win1.containingTab = tab1;
 	

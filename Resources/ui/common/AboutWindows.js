@@ -4,7 +4,8 @@ function ApplicationWindow(title) {
 	var self = Ti.UI.createWindow({
 		title:title,
 		backgroundColor:'black',
-		barImage: titleBg
+		//barImage:titleBg,
+		barColor: '#84bb00'
 	});
 	
 	var topImageBg = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/swipe-controls.png')

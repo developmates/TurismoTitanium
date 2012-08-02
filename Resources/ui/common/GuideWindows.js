@@ -44,7 +44,8 @@ function ApplicationWindow(title,id) {
 	var self = Ti.UI.createWindow({
 		title:title,
 		backgroundColor:'black',
-		barImage:titleBg
+		//barImage:titleBg,
+		barColor: '#84bb00'
 	});
 
 	
@@ -97,11 +98,15 @@ function crearFilasTabla(dataBD){
 	Ti.API.info('datos');
 	
 	var tbl_data = [];
+	var tbl_sections = [];
 	var fieldCount;
 	var row = {
-		id:undefined,
-		nombre:undefined,
-		icon:undefined
+		id:null,
+		nombre:null,
+		subtitulo:null,
+		icon:null,
+		seccion:null,
+		hijo:null
 	}
 	
 	// fieldCount is a property on Android.
@@ -120,12 +125,13 @@ function crearFilasTabla(dataBD){
 	  var cellBg = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/cell-bg.png');
 	  var fila = Ti.UI.createTableViewRow({
 	  	hasChild:true,
-	  	backgroundImage:cellBg,
-	  	height:60
-	  	//backgroundColor: 'red'
+	//  	backgroundImage:cellBg,
+	  	height:60,
+	  	backgroundColor: 'white'
 	  });
 	  
 	  for(i=0;i<fieldCount;i++){
+	  	//nombre del campo
 		var name =  dataBD.fieldName(i);
 		switch(name){
 			case 'id':
@@ -158,27 +164,94 @@ function crearFilasTabla(dataBD){
 	  			});
 	  			fila.add(nombre);
 				break;
-				case 'hijo':
+			case 'hijo':
 				row.hijo = dataBD.fieldByName(name);
 				fila.hijo = row.hijo;
 				break;
-			default:
-				break;
-		}
-	  }
-	  var subtitulo = Ti.UI.createLabel({
+			case 'subtitulo':
+				row.subtitulo = dataBD.fieldByName(name);
+				var subtitulo = Ti.UI.createLabel({
 					top:25,
 	  				left: 45,
-					text: 'Subtitulo con las estrellas del hotel',
+					text: row.subtitulo,
 					height:30,
 					color: 'gray',
 					font: { fontSize:12 }
 	  			});
 	  			fila.add(subtitulo);
+				break;
+			case 'seccion':
+				//creo las secciones si no existen
+				row.seccion = dataBD.fieldByName(name);
+				break;
+			default:
+				break;
+		}
+	  }
+	  
+	  
+	  if(row.seccion === null){
+	  	  //Si esta vacio no hay secciones y agrego una seccion vacia con las filas a los datos de la tabla
+	  	 var seccionActual = null;
+	  	 var totalSecciones = tbl_sections.length;
+		 var seccionExistente = Ti.UI.createTableViewSection({});
+		 
+		 //Obtengo la seccion
+		 for(var r = 0; r<totalSecciones; r++){
+		 	seccionExistente = tbl_sections[r];
+		 	if(seccionExistente.headerTitle === ""){
+		  		seccionActual = seccionExistente;
+		  	}
+		  }
+	  	 
+	  	 if(seccionActual === null){
+	  	 	//Si no encuentra la sección la creo
+	  	 	//creo la seccion
+		  	var seccionNueva = Ti.UI.createTableViewSection({
+				headerTitle: ""
+		  	});
+		  	//Agrego la seccion nueva
+		  	tbl_sections.push(seccionNueva);
+		  	//La pongo en la variable actual para agregarle la fila
+		  	seccionActual = seccionNueva;
+	  	 }
+	  	 //Agrego la fila a la sección
+	  	 seccionActual.add(fila);
 
-	  tbl_data.push(fila);
+	  }else{
+	  	 //Si no esta vacio hay secciones y debo agregar la sección a los datos de la tabla
+	  	 
+	  	 var seccionActual = null;
+	  	 var totalSecciones = tbl_sections.length;
+		 var seccionExistente = Ti.UI.createTableViewSection({});
+		 //Obtengo la seccion
+		 for(var r = 0; r<totalSecciones; r++){
+		 	seccionExistente = tbl_sections[r];
+		 	if(seccionExistente.headerTitle === row.seccion){
+		  		seccionActual = seccionExistente;
+		  	}
+		  }
+	  	 
+	  	 if(seccionActual === null){
+	  	 	//Si no encuentra la sección la creo
+	  	 	//creo la seccion
+		  	var seccionNueva = Ti.UI.createTableViewSection({
+				headerTitle: row.seccion
+		  	});
+		  	//Agrego la seccion nueva
+		  	tbl_sections.push(seccionNueva);
+		  	//La pongo en la variable actual para agregarle la fila
+		  	seccionActual = seccionNueva;
+	  	 }
+	  	 //Agrego la fila a la sección
+	  	 seccionActual.add(fila);
+	  	 
+	  	
+	  }
+	 // tbl_data.push(tbl_sections);
 	  dataBD.next();
 	}
+	
 	dataBD.close();
-	return tbl_data;
+	return tbl_sections;
 }

@@ -4,7 +4,9 @@ function ApplicationWindow(title) {
 	var self = Ti.UI.createWindow({
 		title:title,
 		backgroundColor:'black',
-		barImage:titleBg
+		//barImage:titleBg,
+		navBarHidden:true,
+		barColor: '#84bb00'
 	});
 	
 	var plano = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/PlanoSMTuc.jpg');

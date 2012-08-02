@@ -47,8 +47,8 @@ function crearFilasTablaNoticias(objetoJson){
   		var fila = Ti.UI.createTableViewRow({
   			hasChild:false,
   			backgroundImage:cellBg,
-  			height:60
-  			//backgroundColor: 'red'
+  			height:80
+  			  			//backgroundColor: 'red'
   		});
   		row.texto = objetoJson[i].text;
 		//Ti.API.info(row.texto);
