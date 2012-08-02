@@ -69,7 +69,9 @@ function ApplicationWindow(title,id) {
 		win.containingTab = self.containingTab;
 		self.containingTab.open(win);
 		}else{
-			alert('Ficha');
+			var DetailWindow = require('ui/common/DetailWindow');
+			var win = new DetailWindow('ficha');
+			self.containingTab.open(win);
 		}
 		
 	});
