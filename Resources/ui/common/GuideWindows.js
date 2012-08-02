@@ -218,6 +218,9 @@ function crearFilasTabla(dataBD){
 	  	 //Agrego la fila a la sección
 	  	 seccionActual.add(fila);
 
+
+		//Enguille seccion para Android
+		tbl_data.push(fila);
 	  }else{
 	  	 //Si no esta vacio hay secciones y debo agregar la sección a los datos de la tabla
 	  	 
@@ -253,5 +256,12 @@ function crearFilasTabla(dataBD){
 	}
 	
 	dataBD.close();
-	return tbl_sections;
+	
+	var seccionVacia = Ti.UI.createTableViewSection({});
+	seccionVacia = tbl_sections[0];
+	if(tbl_sections.length === 1 && seccionVacia.headerTitle === ""){
+		return tbl_data
+	}else{
+		return tbl_sections;
+	}
 }
