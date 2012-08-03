@@ -1,43 +1,7 @@
-
-/*
-//Reference prior, cached database
-var dbOLD = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
-//Destroy it
-dbOLD.remove();
-*/
 //Install new database
-var db;
+var dbPath = require('ui/common/ConnectionsDB');
+var db = new dbPath('/PuntaCana.sqlite', 'PuntaCana');
 
-    //if (Ti.Platform.name === 'android' && Ti.Filesystem.isExternalStoragePresent()) {
-	 var dbOLD = Ti.Database.install('/PuntaCana.sqlite', 'PuntaCana');
-		//Destroy it
-		if(dbOLD){
-			Ti.API.info('remove');
-			dbOLD.close();
-			dbOLD.remove();
-		}
-	 
-	 db = Titanium.Database.install('/PuntaCana.sqlite','PuntaCana.sqlite');
-	 //db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
-	 //db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
-	 db = Ti.Database.open('PuntaCana.sqlite');
-   /* }else{
-    	var dbOLD = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
-		//Destroy it
-		if(dbOLD){
-			Ti.API.info('remove');
-			dbOLD.close();
-			dbOLD.remove();
-		}
-      db = Ti.Database.install('PuntaCana.sqlite', 'PuntaCana');
-    }
-	*/
-
-
-/*
-db.execute('CREATE TABLE "Categorias" ("id" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , "nombre" TEXT NOT NULL  UNIQUE )');
-db.execute('INSERT INTO Categorias (id,nombre) VALUES (?,?)',1,'Comidas');
-*/
 function ApplicationWindow(title,id) {
 	
 	var titleBg = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/top-bar-bg.png');
@@ -64,13 +28,13 @@ function ApplicationWindow(title,id) {
 		 */
 		//alert('You clicked row '+e.index+' with id:'+e.row.id);
 		if(e.row.hijo ===0){
-		var GuideWindows = require('ui/common/GuideWindows');
-		var win = new GuideWindows(L('tabName1'),e.row.id)
-		win.containingTab = self.containingTab;
-		self.containingTab.open(win);
+			var GuideWindows = require('ui/common/GuideWindows');
+			var win = new GuideWindows(L('tabName1'),e.row.id)
+			win.containingTab = self.containingTab;
+			self.containingTab.open(win);
 		}else{
 			var DetailWindow = require('ui/common/DetailWindow');
-			var win = new DetailWindow('ficha');
+			var win = new DetailWindow('Detalle');
 			self.containingTab.open(win);
 		}
 		
