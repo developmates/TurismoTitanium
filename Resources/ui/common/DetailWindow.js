@@ -79,10 +79,10 @@ function ApplicationWindow(title,model) {
     
      /*BOTONES***************************************************/
     var bLlamar = Ti.UI.createButton({
-    	title:'Tel: '+'+543814305515',
+    	title:'Tel: '+model.telefonos,
     	color:'black',
     	width: Titanium.Platform.displayCaps.platformWidth - 30,
-    	number:'+543814305515',
+    	number:model.telefonos,
     	font: { fontSize: Titanium.Platform.displayCaps.platformWidth/23, fontWeight:'bold'  },
     	bottom:15
     });
@@ -91,10 +91,10 @@ function ApplicationWindow(title,model) {
 	});
 	
 	var bDireccion = Ti.UI.createButton({
-    	title:'Dir: '+'San Martin 300',
+    	title:'Dir: '+model.direcciones,
     	color:'black',
     	width: Titanium.Platform.displayCaps.platformWidth - 30,
-    	direction:'San Martin 300,'+'San Miguel de Tucumán',
+    	direction: model.direcciones+','+model.localidad,
     	font: { fontSize:Titanium.Platform.displayCaps.platformWidth/23, fontWeight:'bold'  },
     	bottom:15
     });

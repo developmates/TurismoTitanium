@@ -6,8 +6,7 @@ exports.ConnectionsDB = function (localPath,devicePath){
 		this.inicializar = function(){
 			var dbOLD = Ti.Database.install(this.localPath, this.devicePath);
 			//Destroy it
-			if(dbOLD){
-				Ti.API.info('remove');
+			if(dbOLD){ 
 				dbOLD.close();
 				dbOLD.remove();
 			}

@@ -36,20 +36,8 @@ function ApplicationWindow(title,id) {
 			self.containingTab.open(win);
 		}else{
 			var DetailModel = require('ui/common/DetailModel').DetailModel;
-			var modelo = new DetailModel();
-			modelo.titulo = "Hotel Conrad Resort & Casinos";
-			modelo.subtitulo = "subtitulo";
-			modelo.descripcion = "Ubicado en el corazón del balneario más exclusivo de Sudamérica, a tan solo 15 minutos del"+ 
-								"Aeropuerto Internacional en Playa Mansa, frente a la Isla Gorriti.\n\nConrad Punta del Este Resort"+ 
-								" & Casino es un espectacular Resort que cuenta con un flamante casino estilo Las Vegas, único en la"+
-								" región, ubicado estratégicamente al este de Argentina, a solo 35 minutos de Buenos Aires por avión,"+
-								" y al sur de Brasil, a 2 horas y media de Sao Paulo.";
-			modelo.mail = "info@patxa.com";
-			modelo.web = "http://www.patxa.com/";
-			var view1 = Titanium.UI.createView({backgroundColor:'#123'});
-		 	var view2 = Titanium.UI.createView({backgroundColor:'#234'});
-			var view3 = Titanium.UI.createView({backgroundColor:'#345'});			
-			modelo.imagenes = [view1,view2,view3];
+			var modelo = new DetailModel();	
+			modelo.inicializar(e.row.hijo);
 			
 			
 			var DetailWindow = require('ui/common/DetailWindow');
