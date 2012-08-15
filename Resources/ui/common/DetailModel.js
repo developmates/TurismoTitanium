@@ -9,6 +9,7 @@ module.exports.DetailModel = function(){
 	this.mail=null;
 	this.web=null;
 	this.localidad=null;
+	this.sucursales = null;
 	
 	this.imprimir = function(){
 		Ti.API.info(
@@ -28,7 +29,8 @@ module.exports.DetailModel = function(){
 
 exports.DetailModel.prototype.getTitulo = function(){
 	return this.titulo;
-}
+};
+
 exports.DetailModel.prototype.inicializar = function(id){
 		var ConnectionsDB = require('ui/common/ConnectionsDB').ConnectionsDB;
 		var conexion = new ConnectionsDB('/PuntaCana.sqlite', 'PuntaCana');
@@ -52,21 +54,39 @@ exports.DetailModel.prototype.inicializar = function(id){
 			this.localidad = dataBD.fieldByName("localidad");
 			
 			dataBD.next();
-			
-			
-			Ti.API.info(
-			//this.imagenes + "\n"
-			this.titulo + "\n" +
-			this.subtitulo + "\n" +
-			this.icono + "\n" +
-			this.descripcion + "\n" +	
-			this.telefonos + "\n" +
-			this.direcciones + "\n" +
-			this.mail + "\n" +
-			this.web 
-			);
 		}
 		
 		dataBD.close();
-	};
+		
+		this.sucursales = creaSucursales(id);
+};
+
+var creaSucursales = function (id){
+		var ConnectionsDB = require('ui/common/ConnectionsDB').ConnectionsDB;
+		var conexion = new ConnectionsDB('/PuntaCana.sqlite', 'PuntaCana');
+		var db = conexion.inicializar();
+		
+		dataBD = db.execute('SELECT * FROM Sucursales WHERE id='+id);
+		
+		var sucursales  = [];
+		while (dataBD.isValidRow())
+		{
+			var DetailModelSucursal = require('ui/common/DetailModelSucursal').DetailModelSucursal;
+			var sucursal = new DetailModelSucursal();	
+			
+			sucursal.direccion=dataBD.fieldByName("direccion");	
+			sucursal.localidad=dataBD.fieldByName("localidad");	
+			
+			var cadena = dataBD.fieldByName("telefono");
+			sucursal.telefonos= cadena.split("/");
+			
+			sucursales.push(sucursal);
+			
+			dataBD.next();
+		}
+		
+		dataBD.close();
+		
+		return sucursales;
+};
 

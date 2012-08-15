@@ -38,8 +38,7 @@ function ApplicationWindow(title,id) {
 			var DetailModel = require('ui/common/DetailModel').DetailModel;
 			var modelo = new DetailModel();	
 			modelo.inicializar(e.row.hijo);
-			
-			
+		    
 			var DetailWindow = require('ui/common/DetailWindow');
 			var win = new DetailWindow('Detalle',modelo);
 			self.containingTab.open(win);
