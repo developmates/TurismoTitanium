@@ -47,11 +47,11 @@ exports.DetailModel.prototype.inicializar = function(id){
 			this.subtitulo=dataBD.fieldByName("subtitulo");
 			this.icono=dataBD.fieldByName("logo");
 			this.descripcion=dataBD.fieldByName("descripcion");	
-			this.telefonos=dataBD.fieldByName("telefono");
-			this.direcciones=dataBD.fieldByName("direccion");
+			//this.telefonos=dataBD.fieldByName("telefono");
+			//this.direcciones=dataBD.fieldByName("direccion");
 			this.mail=dataBD.fieldByName("mail");
 			this.web=dataBD.fieldByName("website");
-			this.localidad = dataBD.fieldByName("localidad");
+			//this.localidad = dataBD.fieldByName("localidad");
 			
 			dataBD.next();
 		}
